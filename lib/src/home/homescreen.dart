@@ -22,6 +22,77 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
 
+
+          // getx dilog box
+          Card(
+            child: ListTile(
+              
+              title: Text("Getx dialog Alert"),
+              subtitle: Text("Gets "),
+              onTap: (){
+                Get.defaultDialog(
+                  title: "Delete Chat",
+                  middleText: "Are you sour delete text",
+                  contentPadding: EdgeInsets.all(10),
+                  titlePadding: EdgeInsets.all(10),
+                  confirm: TextButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, child: Text("yes")),
+                  cancel: TextButton(onPressed: (){
+                    Get.back();
+                  }, child: Text("No")),
+                  content: Column(
+                    children: [
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                      Text("data"),
+                    ],
+                  )
+                );
+
+              },
+            ),
+          ),
+
+          // get bottom shite
+          Card(
+            child: ListTile(
+
+              title: Text("Getx Bottom sheet"),
+              subtitle: Text("Gets "),
+              onTap: (){
+
+            Get.bottomSheet(
+
+              Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.light_mode),
+                      title: Text("light theme"),
+                      onTap: (){
+                        Get.changeTheme(ThemeData.light());
+                      },
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.dark_mode),
+                      title: Text("dark theme"),
+                      onTap: (){
+                        Get.changeTheme(ThemeData.dark());
+                      },
+                    ),
+
+                  ],
+                ),
+              )
+
+            );
+
+              },
+            ),
+          ),
         ],
       ),
     );
