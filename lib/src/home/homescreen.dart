@@ -99,7 +99,26 @@ class _HomePageState extends State<HomePage> {
 
           TextButton(onPressed: (){
             Get.to(HomeOneScreen());
-          }, child: Text("Navigation button"))
+          }, child: Text("Navigation button")),
+
+
+          //========Languages changer ==========
+
+          ListTile(
+            title: Text('message'.tr),
+            subtitle: Text('name'.tr),
+          ),
+          Row(
+            children: [
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('en','US'));
+              }, child: Text("English")),
+              SizedBox(width: 10,),
+              OutlinedButton(onPressed: (){
+                Get.updateLocale(Locale('ur','IN'));
+              }, child: Text("Hindi")),
+            ],
+          )
         ],
       ),
     );
