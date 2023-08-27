@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxuse/src/controller/getcontrollerr_one.dart';
 import 'package:getxuse/src/home/home_one.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,9 +10,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final CounterController controller  = Get.put(CounterController());
+
+
+
   @override
   Widget build(BuildContext context) {
+    print("rebuild");
     return Scaffold(
+
       appBar: AppBar(title: Text("getx"),),
 
       floatingActionButton: FloatingActionButton(
@@ -118,7 +126,19 @@ class _HomePageState extends State<HomePage> {
                 Get.updateLocale(Locale('ur','IN'));
               }, child: Text("Hindi")),
             ],
-          )
+          ),
+
+          //===========counter statemangment============
+
+          Obx(() {
+          return  Text(controller.count.toString(),style: TextStyle(fontSize: 25),);
+          }),
+          OutlinedButton(onPressed: (){
+
+            controller.incrementCounter();
+
+            }, child: Text("click"))
+
         ],
       ),
     );
