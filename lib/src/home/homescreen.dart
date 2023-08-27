@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxuse/src/home/home_one.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -55,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          // get bottom shite
+          // get bottom sheete
           Card(
             child: ListTile(
 
@@ -93,6 +94,12 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
+
+          //Navigation Button
+
+          TextButton(onPressed: (){
+            Get.to(HomeOneScreen());
+          }, child: Text("Navigation button"))
         ],
       ),
     );
